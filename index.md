@@ -2,11 +2,13 @@
 
 ## Overview
 
-This document is intended for developers who want to write applications that interact with Dataglide. It explains basic concepts of Dataglide and of the API itself. It also provides an overview of the different functions that the API supports.
+This document is intended for developers who want to write applications that interact with Dataglide. It explains basic concepts of Dataglide and of the API itself. It also provides an overview of the different functions that the API supports. Currently the Dataglide API only allows read access to data.
 
 ## Accessing the API
 
-The Dataglide API is available at ```https://api.dataglide.co/{version}/{endpoint}``` where {version} is the version of the API that you wish to access (currently v1.0). Access to the API must be made using TLS1.2 (less secure versions of TLS are not supported).
+The Dataglide API is available at ```https://api.{environment}.dataglide.co/{version}/{endpoint}``` where {version} is the version of the API that you wish to access (currently v1.0). Access to the API must be made using TLS1.2 (less secure versions of TLS are not supported).
+
+Access to the Production environment is available at: ```https://api.dataglide.co/{version}/{endpoint}```.
 
 Access to the Parallel environment is available at: ```https://api.parallel.dataglide.co/{version}/{endpoint}```
 
@@ -41,33 +43,7 @@ If you want to refresh your token with a new token you can call:
 
 This will return you a new token with an extended expiry date/time.
 
-Endpoints will return a ```401``` status code if the authorisation token provided is missing, invalid or expired.
+Endpoints will return a ```401``` status code if the authorisation token provided is missing, invalid or expired. If you application runs for an extended period then you should regularly refresh your access token. If your application receives a 401 response then you should re-authenticate to fetch a new valid token - it is not possible to refresh an expired token. 
 
-##Swagger documentation
 
-The API is documented using Swagger. 
-
-##Related documents
-
-```[GET] /RelatedDocuments/ByIsin/{isin}```
-
-Returns:
-
-```
-[
-  {
-    "relatedEntity": "ShareClasses",
-    "relatedId": "<GUID>",
-    "documentId": "<GUID>",
-    "languages": [ "en" ],
-    "publicationCountries": [ "FR", "DE" ],
-    "documentType": "PR",
-    "applicableDate": "2023-04-23",
-    "createdOnDateTime": "2023-04-23T18:25:43.511Z",
-    "sizeInBytes": "123",
-    "contentHash": "ey2648jhhw22"
-  },
-  { ... }
-]
-```
 
