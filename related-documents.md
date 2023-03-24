@@ -1,7 +1,7 @@
 # Related documents
 
 The Dataglide API allows access to documents related to the instruments that the system holds. 
-These documents might include KIID documents, prospectuses and other fund produced documentation.
+These documents might include KIID documents, prospectus and other fund produced documentation.
 
 ```[GET] /RelatedDocuments/ByIsin/{isin}```
 
