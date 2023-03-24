@@ -45,5 +45,10 @@ This will return you a new token with an extended expiry date/time.
 
 Endpoints will return a ```401``` status code if the authorisation token provided is missing, invalid or expired. If you application runs for an extended period then you should regularly refresh your access token. If your application receives a 401 response then you should re-authenticate to fetch a new valid token - it is not possible to refresh an expired token. 
 
+# Endpoints
+
+| Subject | Description |
+| ------- | ----------- |
+| [Related documents](related-documents.md) | Documents related to a share class, fund, sub-fund or asset manager |
 
 
