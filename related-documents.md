@@ -25,3 +25,8 @@ Returns a list of documents related to the specified ISIN.
 ]
 ```
 
+To fetch the content of a specific document use the following endpoint:
+
+```[GET] /RelatedDocuments/ByIsin/{isin}/{documentId}/content```
+
+This will return a file stream with the document contents.
